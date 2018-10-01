@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="hero">
+  <h1 class="display-3">{{ page.title }}</h1>
+  <h4 class=""><small class="text-muted">{{ page.date | date: "%B %-d, %Y" }}</small></h4>
+</div>
+
+<div class="post border-top">
+  <div class="post-tag">
+    <a href="#" class="post-tag-content border badge badge-dark">technology</a>
+    <a href="#" class="post-tag-content border badge badge-dark">life</a>
+    <a href="#" class="post-tag-content border badge badge-dark">style</a>
+  </div>
+  <div class="post-content lead">
+    <p>{{ content }}</p>
+  </div>
+</div>
