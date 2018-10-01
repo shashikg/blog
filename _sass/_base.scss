@@ -1,7 +1,47 @@
 body {
   padding-top: 5rem;
 }
-.starter-template {
+.post {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  // text-align: center;
+}
+.post-header{
+
+}
+.post-tag{
+
+}
+.post-tag-content {
+  // margin-right: 0.2rem;
+}
+.post-title {
+  // padding-bottom: 0.5rem;
+  margin-bottom: 0;
+}
+.post-content {
+  padding-top: 0.7rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+.post-footer {
+  padding-top: 0.7rem;
+}
+.hero {
   padding: 3rem 1.5rem;
   text-align: center;
+}
+
+footer {
+  margin-top: 5rem;
+}
+
+.footer-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.social-icon {
+  text-decoration: none;
+  margin-left: 1rem;
 }
