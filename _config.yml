@@ -1,7 +1,6 @@
 title: Shashi's Blog
 description: "A list of articles written by Shashi Kant."
-# baseurl: "/blog"
-url: "https://shashikg.github.io/blog"
+url: "https://shashikg.github.io/blog/"
 
 paginate: 1
 paginate_path: "/blog/page:num/"
