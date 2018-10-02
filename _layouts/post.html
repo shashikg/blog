@@ -5,9 +5,9 @@ layout: post-page
   <h1 class="display-3">{{ page.title }}</h1>
   <h4 class=""><small class="text-muted">{{ page.date | date: "%B %-d, %Y" }}</small></h4>
   <h4>
-    <a href="{{ page.previous.url }}" class="post-nav" data-toggle="tooltip" data-placement="left" title="{{ page.previous.title }}"><i class="fas fa-arrow-left"></i></a>
-    <a href="{{ site.url }}{{ site.baseurl }}" class="post-nav"><i class="fas fa-home"></i></a>
-    <a href="{{ page.next.url }}" class="post-nav" data-toggle="tooltip" data-placement="right" title="{{ page.next.title }}"><i class="fas fa-arrow-right"></i></a>
+    <a href="{{ site.baseurl }}{{ page.previous.url }}" class="post-nav" data-toggle="tooltip" data-placement="left" title="{{ page.previous.title }}"><i class="fas fa-arrow-left"></i></a>
+    <a href="{{ site.url }}{{ site.baseurl }}/" class="post-nav"><i class="fas fa-home"></i></a>
+    <a href="{{ site.baseurl }}{{ page.next.url }}" class="post-nav" data-toggle="tooltip" data-placement="right" title="{{ page.next.title }}"><i class="fas fa-arrow-right"></i></a>
   </h4>
 </div>
 

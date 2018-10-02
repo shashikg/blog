@@ -1,10 +1,10 @@
 title: Shashi's Blog
 description: "A list of articles written by Shashi Kant."
 baseurl: "/blog"
-url: "https://shashikg.github.io/"
+url: "https://shashikg.github.io"
 
 paginate: 1
-paginate_path: "/blog/page:num/"
+paginate_path: "/page:num/"
 plugins: [jekyll-paginate]
 
 markdown: kramdown
