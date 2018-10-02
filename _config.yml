@@ -1,0 +1,26 @@
+title: Shashi's Blog
+description: "A list of articles written by Shashi Kant."
+baseurl: "/blog/"
+url: "https://shashikg.github.io/"
+
+paginate: 5
+paginate_path: "/blog/page:num/"
+plugins:
+- jekyll-paginate
+
+markdown: kramdown
+kramdown:
+ input: GFM
+ auto_ids: true
+ hard_wrap: false
+highlighter: rouge
+
+social-accounts:
+  facebook: "shashikg.iitk"
+  twitter: "shashikg_iitk"
+  youtube: "UCD1ELtVIfZnmIGbfVT9bHXQ"
+  googleplus: "101058871085746328098"
+  github: "shashikg"
+
+# google_analytics: 
+# disqus_shortname:
