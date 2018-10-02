@@ -6,42 +6,64 @@ layout: page
   <!-- <p class="lead ">Undergrad at IIT Kanpur! Hello </p> -->
 </div>
 
-<div class="post border-top">
-  <div class="post-header">
-    <h1 class="post-title">Bootstrap starter template</h1>
-    <h4 class="post-date"><small class="text-muted">October 2, 2018</small></h4>
+<!-- This loops through the paginated posts -->
+{% for post in paginator.posts %}
+  <div class="post border-top">
+    <div class="post-header">
+      <h1 class="post-title">{{ post.title }}</h1>
+      <h4 class="post-date"><small class="text-muted">{{ post.date | date: "%B %-d, %Y" }}</small></h4>
+    </div>
+    <div class="post-tag">
+      <a href="#" class="post-tag-content border badge badge-dark">technology</a>
+      <a href="#" class="post-tag-content border badge badge-dark">life</a>
+      <a href="#" class="post-tag-content border badge badge-dark">style</a>
+    </div>
+    <div class="post-content lead">
+      <p>{{ post.excerpt }}</p>
+    </div>
+    <a href="{{ post.url }}" class="post-footer">
+      <button type="button" class="btn btn-outline-primary">READ MORE</button>
+    </a>
   </div>
-  <div class="post-tag">
-    <a href="#" class="post-tag-content border badge badge-dark">technology</a>
-    <a href="#" class="post-tag-content border badge badge-dark">life</a>
-    <a href="#" class="post-tag-content border badge badge-dark">style</a>
-  </div>
-  <div class="post-content lead">
-    <p>Use this document as a way to quickly start any new project. All you get is this text and a mostly barebones HTML document. Use this document as a way to quickly start any new project. All you get is this text and a mostly barebones HTML document.Use this document as a way to quickly start any new project. All you get is this text and a mostly barebones HTML document.Use this document as a way to quickly start any new project. All you get is this text and a mostly barebones HTML document.</p>
-  </div>
-  <div class="post-footer">
-    <button type="button" class="btn btn-outline-primary">READ MORE</button>
-  </div>
-</div>
+{% endfor %}
 
-<div class="post border-top">
-  <h1 class="post-title">Bootstrap starter template</h1>
-  <p class="lead post-content">Use this document as a way to quickly start any new project. All you get is this text and a mostly barebones HTML document.</p>
-  <div class="post-nav">
-    <button type="button" class="btn btn-light border">Read More</button>
-  </div>
-</div>
-
+<!-- Pagination links -->
 <nav aria-label="...">
   <ul class="pagination justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
+    {% if paginator.previous_page %}
+      <li class="page-item">
+        <a class="page-link" href="{{ paginator.previous_page_path }}" tabindex="-1">Previous</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1">Previous</a>
+      </li>
+    {% endif %}
+
+    {% for i in (1..paginator.total_pages) %}
+      {% if i == 1 %}
+        {% if i == paginator.page %}
+          <li class="page-item active"><a class="page-link" href="{{site.url}}">{{ i }}</a></li>
+        {% else %}
+          <li class="page-item"><a class="page-link" href="{{site.url}}">{{ i }}</a></li>
+        {% endif %}
+      {% else %}
+        {% if i == paginator.page %}
+          <li class="page-item active"><a class="page-link" href="/blog/page{{ i }}/">{{ i }}</a></li>
+        {% else %}
+          <li class="page-item"><a class="page-link" href="/blog/page{{ i }}/">{{ i }}</a></li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {% if paginator.next_page %}
+      <li class="page-item">
+        <a class="page-link" href="{{ paginator.next_page_path }}">Next</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" href="{{ paginator.next_page_path }}">Next</a>
+      </li>
+    {% endif %}
   </ul>
 </nav>

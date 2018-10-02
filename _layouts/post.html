@@ -4,6 +4,11 @@ layout: post-page
 <div class="hero">
   <h1 class="display-3">{{ page.title }}</h1>
   <h4 class=""><small class="text-muted">{{ page.date | date: "%B %-d, %Y" }}</small></h4>
+  <h4>
+    <a href="{{ page.previous.url }}" class="post-nav" data-toggle="tooltip" data-placement="left" title="{{ page.previous.title }}"><i class="fas fa-arrow-left"></i></a>
+    <a href="{{ site.url }}" class="post-nav"><i class="fas fa-home"></i></a>
+    <a href="{{ page.next.url }}" class="post-nav" data-toggle="tooltip" data-placement="right" title="{{ page.next.title }}"><i class="fas fa-arrow-right"></i></a>
+  </h4>
 </div>
 
 <div class="post border-top">
@@ -13,7 +18,7 @@ layout: post-page
     <a href="#" class="post-tag-content border badge badge-dark">style</a>
   </div>
   <div class="post-content lead">
-    <p>{{ content }}</p>
+    <p>{{ page.content }}</p>
   </div>
 </div>
 

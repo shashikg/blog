@@ -1,18 +1,13 @@
 title: Shashi's Blog
 description: "A list of articles written by Shashi Kant."
-baseurl: "/blog/"
-url: "https://shashikg.github.io/"
+# baseurl: "/blog"
+url: "https://shashikg.github.io/blog"
 
-paginate: 5
+paginate: 1
 paginate_path: "/blog/page:num/"
-plugins:
-- jekyll-paginate
+plugins: [jekyll-paginate]
 
 markdown: kramdown
-kramdown:
- input: GFM
- auto_ids: true
- hard_wrap: false
 highlighter: rouge
 
 social-accounts:
@@ -22,5 +17,9 @@ social-accounts:
   googleplus: "101058871085746328098"
   github: "shashikg"
 
-# google_analytics: 
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+# google_analytics:
 # disqus_shortname:
