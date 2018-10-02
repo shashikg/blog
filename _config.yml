@@ -3,7 +3,7 @@ description: "A list of articles written by Shashi Kant."
 baseurl: "/blog"
 url: "https://shashikg.github.io"
 
-paginate: 1
+paginate: 5
 paginate_path: "/page:num/"
 plugins: [jekyll-paginate]
 
