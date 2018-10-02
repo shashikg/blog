@@ -21,7 +21,7 @@ layout: page
     <div class="post-content lead">
       <p>{{ post.excerpt }}</p>
     </div>
-    <a href="{{ post.url }}" class="post-footer">
+    <a href="{{ site.baseurl }}{{ post.url }}" class="post-footer">
       <button type="button" class="btn btn-outline-primary">READ MORE</button>
     </a>
   </div>
@@ -32,7 +32,7 @@ layout: page
   <ul class="pagination justify-content-center">
     {% if paginator.previous_page %}
       <li class="page-item">
-        <a class="page-link" href="{{ paginator.previous_page_path }}" tabindex="-1">Previous</a>
+        <a class="page-link" href="{{ site.baseurl }}{{ paginator.previous_page_path }}" tabindex="-1">Previous</a>
       </li>
     {% else %}
       <li class="page-item disabled">
@@ -43,15 +43,15 @@ layout: page
     {% for i in (1..paginator.total_pages) %}
       {% if i == 1 %}
         {% if i == paginator.page %}
-          <li class="page-item active"><a class="page-link" href="{{site.url}}">{{ i }}</a></li>
+          <li class="page-item active"><a class="page-link" href="{{site.url}}{{ site.baseurl }}">{{ i }}</a></li>
         {% else %}
-          <li class="page-item"><a class="page-link" href="{{site.url}}">{{ i }}</a></li>
+          <li class="page-item"><a class="page-link" href="{{site.url}}{{ site.baseurl }}">{{ i }}</a></li>
         {% endif %}
       {% else %}
         {% if i == paginator.page %}
-          <li class="page-item active"><a class="page-link" href="/blog/page{{ i }}/">{{ i }}</a></li>
+          <li class="page-item active"><a class="page-link" href="{{ site.baseurl }}/page{{ i }}/">{{ i }}</a></li>
         {% else %}
-          <li class="page-item"><a class="page-link" href="/blog/page{{ i }}/">{{ i }}</a></li>
+          <li class="page-item"><a class="page-link" href="{{ site.baseurl }}/page{{ i }}/">{{ i }}</a></li>
         {% endif %}
       {% endif %}
     {% endfor %}
