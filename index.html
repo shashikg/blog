@@ -14,9 +14,9 @@ layout: page
       <h4 class="post-date"><small class="text-muted">{{ post.date | date: "%B %-d, %Y" }}</small></h4>
     </div>
     <div class="post-tag">
-      <a href="#" class="post-tag-content border badge badge-dark">technology</a>
-      <a href="#" class="post-tag-content border badge badge-dark">life</a>
-      <a href="#" class="post-tag-content border badge badge-dark">style</a>
+      {% for tag in post.tags %}
+        <a href="#" class="post-tag-content border badge badge-dark">{{ tag }}</a>
+      {% endfor %}
     </div>
     <div class="post-content lead">
       <p>{{ post.excerpt }}</p>
